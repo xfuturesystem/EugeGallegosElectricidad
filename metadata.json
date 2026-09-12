@@ -1,0 +1,6 @@
+{
+  "name": "Eugenio Gallegos Electricidad",
+  "description": "Sitio web profesional de servicios eléctricos, instalaciones, mantenimiento de tableros, boletines eléctricos y atención de urgencias.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
