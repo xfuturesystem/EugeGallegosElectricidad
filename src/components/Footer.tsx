@@ -1,6 +1,7 @@
 import React from 'react';
-import { Zap, Phone, Mail, MapPin, ArrowUp, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowUp, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { COMPANY_INFO, SERVICES } from '../data/content';
+import { LogoEG } from './LogoEG';
 
 interface FooterProps {
   onOpenLegal?: (type: 'aviso-legal' | 'privacidad') => void;
@@ -19,28 +20,46 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
           
           {/* Column 1: Brand & Credentials */}
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-slate-100 to-slate-300 flex items-center justify-center text-neutral-950 font-black shadow-md shadow-slate-300/10">
-                <Zap className="w-6 h-6 fill-current" />
-              </div>
-              <div>
-                <div className="text-lg font-bold text-white font-heading">
-                  EUGENIO GALLEGOS
-                </div>
-                <div className="text-[10px] tracking-widest text-[#CBD5E1] font-semibold uppercase">
-                  Electricidad Profesional
-                </div>
-              </div>
-            </div>
+            <a
+              href="#inicio"
+              onClick={scrollToTop}
+              className="inline-block group focus:outline-none py-1"
+              aria-label="Electricidad Gallegos - Inicio"
+            >
+              <LogoEG className="h-8 sm:h-9 w-auto text-white group-hover:opacity-90 transition-opacity" />
+            </a>
 
             <p className="text-xs text-neutral-400 leading-relaxed">
               Empresa instaladora autorizada en Baja Tensión. Especialistas en cuadros eléctricos limpios, boletines CIE oficiales, recargas de vehículos eléctricos y mantenimiento preventivo.
             </p>
 
-            <div className="pt-2">
+            <div className="pt-1">
               <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-neutral-900 border border-neutral-800 text-[11px] text-[#E2E8F0] font-medium">
                 <ShieldCheck className="w-4 h-4 text-[#CBD5E1]" />
                 <span>N° Registro: {COMPANY_INFO.licenseNumber.split(' ')[0]}</span>
+              </div>
+            </div>
+
+            {/* Código QR oficial */}
+            <div className="pt-2">
+              <div className="p-3 rounded-2xl bg-neutral-900/90 border border-neutral-800 inline-flex items-center gap-3.5 max-w-[280px]">
+                <div className="p-1.5 bg-white rounded-xl shadow-md flex-shrink-0">
+                  <img
+                    src="/qrEG.jpeg"
+                    alt="Código QR Eugenio Gallegos Electricidad"
+                    referrerPolicy="no-referrer"
+                    className="w-24 h-24 sm:w-28 sm:h-28 object-contain rounded"
+                    style={{ maxWidth: '140px', maxHeight: '140px' }}
+                  />
+                </div>
+                <div className="space-y-1">
+                  <p className="text-xs font-bold text-white tracking-wide">
+                    Escanea el QR
+                  </p>
+                  <p className="text-[11px] text-neutral-400 leading-snug">
+                    Contacto directo en tu móvil para consultas y presupuestos.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

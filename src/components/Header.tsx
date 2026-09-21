@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Zap, Phone, MessageSquare, Menu, X, ShieldCheck, Clock } from 'lucide-react';
 import { COMPANY_INFO } from '../data/content';
+import { LogoEG } from './LogoEG';
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -85,19 +86,10 @@ export const Header: React.FC = () => {
             id="brand-logo"
             href="#inicio"
             onClick={(e) => handleNavClick(e, '#inicio')}
-            className="flex items-center gap-3 group focus:outline-none"
+            className="flex items-center group focus:outline-none py-1"
+            aria-label="Electricidad Gallegos - Inicio"
           >
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-slate-100 via-slate-200 to-slate-400 flex items-center justify-center text-neutral-950 font-black shadow-lg shadow-slate-300/10 group-hover:scale-105 transition-transform border border-slate-300/30">
-              <Zap className="w-6 h-6 fill-current text-neutral-950" />
-            </div>
-            <div>
-              <div className="text-lg sm:text-xl font-bold tracking-tight text-white flex items-center gap-1.5 font-heading">
-                EUGENIO GALLEGOS
-              </div>
-              <div className="text-[10px] tracking-widest text-[#CBD5E1] font-semibold uppercase">
-                Electricidad
-              </div>
-            </div>
+            <LogoEG className="h-8 sm:h-9 w-auto text-white group-hover:opacity-90 transition-opacity" />
           </a>
 
           {/* Desktop Navigation Links */}
